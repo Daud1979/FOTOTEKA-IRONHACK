@@ -10,6 +10,7 @@ const _ = require('lodash');
 const objImg = [];
 
 const carpeta = './public';
+/*carpeta*/
 let id =0;
 app.set('view engine', 'ejs');
 app.use(morgan('tiny'));
