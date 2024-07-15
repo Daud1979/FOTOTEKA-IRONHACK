@@ -1,0 +1,55 @@
+<%- include('./partials/headRegister') %>
+<%- include('./partials/navRegister') %>
+<p id="counter" class="countImage">Total de Imagenes <%=  objImg.length %></p>        
+    <div class="containerRegister">
+        <h3>REGISTRAR NUEVAS IMAGENES</h3>
+        <form  action="" method="post" >
+            <div class="form">                
+                <div class="input_txt">
+                    <label for="title">Categoria</label>
+                </div>
+                <div class="cmb">
+                    <select class="cmbselect" id="cmbselect" required>                        
+                        <option value="Animales">Animales</option>
+                        <option value="Paisajes">Paisajes</option>
+                        <option value="Ciudad">Ciudad</option>
+                        <option value="Vehiculos">Vehiculos</option>
+                        <option value="Personas">Personas</option>      
+                        <option value="Otros">Otros</option>                 
+                      </select>
+                </div>
+            </div>
+            <div class="form">                
+                <div class="input_txt">
+                    <label for="title">Titulo Imagen</label>
+                </div>
+                <div class="title">
+                    <input type="text" name="title" onkeypress="return valideKey(event);" required id="title" >
+                </div>
+            </div>
+
+            <div class="form ">
+                <div class="input_txt">
+                    <label for="imgUrl">Url Imagen</label>
+                </div>
+                <div class="imgUrl">
+                    <input type="text" name="imgUrl" autocomplete="off" required id="imgUrl">
+                </div>
+            </div>
+           
+            <div class="form">
+                <div class="input_txt">
+                    <label for="imgDate">Fecha de Imagen</label>
+                </div>
+                <div class="imgDate">
+                    <input type="date" name="imgDate" required id="imgDate">
+                </div>
+            </div>
+             <div class="buttonForm">
+                <input class="btn"  type="button" id="btnenviar" value="Registrar">
+                <input class="btn" type="button" id="limpiar" value="Limpiar" >
+            </div> 
+            <p id="texto" > </p>
+        </form>
+    </div>
+<%- include('./partials/foot') %>

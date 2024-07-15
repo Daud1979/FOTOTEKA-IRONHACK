@@ -1,0 +1,23 @@
+<%- include('./partials/head') %>
+<%- include('./partials/nav') %>
+
+    <div class="container">
+        <div class="slide">  
+        <div class="colors"></div>   
+        <!--uno-->   
+        
+        <% for (const image of images) { %>       
+         
+         <div class="item" style="background-image: url(<%=image%>);">
+            <div class="content">
+                <div class="name">IRONHACK 2024</div>
+                <div class="des">Los del Pleistoceno</div>                
+            </div>
+        </div>   
+        <% } %>          <!--aqui-->     
+        <div class="button">
+            <button class="prev">Anterior</i></button>
+            <button class="next">Siguiente </i></button>
+        </div>    
+    </div>
+<%- include('./partials/foot') %>

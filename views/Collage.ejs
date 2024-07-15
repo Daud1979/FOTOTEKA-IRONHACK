@@ -1,0 +1,21 @@
+<%- include('./partials/headCollage') %>
+<%- include('./partials/navCollage') %>
+<p class="countImage">Total de Imagenes <%= objImg.length %></p>
+<div class="containerCollage">
+    <div class="flex-container">
+        <% for (const image of objImg) { %>          
+        <div  class="flex-item hijo" >
+            <div class="colors">
+                <p class="rgb"><%=image.colors%></p>
+                <div class="color" style="<%=image.pintar%>"></div>                
+            </div>
+            <button class="esx" onclick="eliminar(<%= image.id %>)" id="<%= image.id %>"><i class="fas fa-trash-alt"></i></button>
+            <img src="<%=image.imgUrl%>" alt="">
+            <p class="imgtitle" ><%= image.title.toUpperCase() %> <span class="categoria"> <%= image.imgCategory %></span></p>
+            <p class="imgdate" ><%= image.imgDate %></p>                   
+        </div>
+       <% } %>   
+    </div>
+</div>
+
+<%- include('./partials/foot') %>
