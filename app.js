@@ -24,7 +24,7 @@ app.listen(3000, () => {
 //carga imagenes de plesitoceno
 //const images = listarImagenesSync();
 //carga la primer pagina pleistocenos
-app.get('/', (req, res) => {
+app.get('/fotosironhack', (req, res) => {
     const directoryPath = path.join(__dirname, 'public/ironhack');
 
     fs.readdir(directoryPath, (err, files) => {
@@ -37,33 +37,12 @@ app.get('/', (req, res) => {
         img.forEach(element => {
            images.push('ironhack/'+element);
         });
-        console.log(images);
+       
         res.render('home', {
             images
         });
     });
 });
-// app.get('/', (req, res) => {
-//     console.log(images);
-//     res.render('home', {
-//         images
-//     });
-// });
-// //lista todas las imagenes que se registran... 
-// function listarImagenesSync(carpeta) {
-//     const extensionesImagen = ['.jpg', '.jpeg', '.png', '.gif', '.bmp', '.svg', '.webp'];
-//     try {
-//         const archivos = fs.readdirSync(carpeta);
-//         const imagenes = archivos.filter(archivo => {
-//             return extensionesImagen.includes(path.extname(archivo).toLowerCase());
-//         });
-//         const rutasImagenes = imagenes.map(imagen => path.join(imagen));
-//         return rutasImagenes;
-//     } catch (err) {
-//         console.error('Error leyendo la carpeta:', err);
-//         return [];
-//     }
-// }
 //lista desde carpeta
 function listarImagenesSync() {
     const directoryPath = path.join(__dirname, 'public/ironhack');
@@ -72,7 +51,6 @@ function listarImagenesSync() {
         if (err) {
             return ('NO HAY IMAGENES');
         }
-
         // Filtrar solo archivos de imagen (opcional)
         const images = files.filter(file => /\.(jpg|jpeg|png|gif)$/i.test(file));
         return (images);
@@ -89,7 +67,7 @@ app.post('/searchCollage',(req, res) => {
     const { search } = req.body;
     console.log(search);
     const newObjImg = objImg.filter(item => item.title.toLowerCase().includes(search.toLowerCase()));
-      console.log(newObjImg);
+     
       if (newObjImg.length>0)
       {
         res.send( newObjImg );
@@ -100,7 +78,7 @@ app.post('/searchCollage',(req, res) => {
 
 });
 //carga las imagenes en la pagina de collage
-app.get('/Collage', (req, res) => {
+app.get('/', (req, res) => {
     res.render('Collage', {
         objImg
     });

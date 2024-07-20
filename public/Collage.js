@@ -61,12 +61,16 @@ inputsearch.addEventListener('keyup',()=>{
                           colorsN.appendChild(colorN);
                        
                           let pTitle = document.createElement('p');
+                          let pSpan =document.createElement('span');
                           let pImg = document.createElement('p');
                           pTitle.classList.add('imgtitle');
+                          pSpan.classList.add('categoria');
                           pImg.classList.add('imgdate');
                           pTitle.innerText=element.title.toUpperCase();
+                          pSpan.innerHTML = element.imgCategory;
                           pImg.innerText=element.imgDate;
                           flexitemN.appendChild(pTitle);
+                          pTitle.appendChild(pSpan);
                           flexitemN.appendChild(pImg);
                         
                          const btnX = document.createElement('button');                          

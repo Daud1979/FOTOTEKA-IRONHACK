@@ -26,7 +26,7 @@ body{
     transform: translate(-50%, -50%);
     width: 60%;
     height: 75%;
-    background: #f8f8f8;
+    background: #f8f7f7;
     box-shadow: 0 30px 50px #dbdbdb;  
     border-radius: 10px; 
     
@@ -429,6 +429,10 @@ input{
     padding: 20px;
     justify-content: center;
 
+}
+.noImg{
+    font-size: 2rem;
+    
 }
 .flex-item {
     flex: 1 1 1  calc(15% - 20px); /* 4 columnas menos el espacio de las brechas */
